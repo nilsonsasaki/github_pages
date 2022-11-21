@@ -38,91 +38,102 @@ mixin ScreenDetector {
     return ScreenType.unknownScreen;
   }
 
-  Widget selectScreen({
+  Widget selectWidgetByScreenSize({
     required MediaQueryData mediaQueryData,
-    required Widget defaultScreen,
-    Widget? portraitPhoneScreen,
-    Widget? portraitTabletScreen,
-    Widget? portraitDesktopScreen,
-    Widget? landscapePhoneScreen,
-    Widget? landscapeTabletScreen,
-    Widget? landscapeDesktopScreen,
+    required Widget defaultWidget,
+    Widget? portraitDefaultWidget,
+    Widget? portraitPhoneWidget,
+    Widget? portraitTabletWidget,
+    Widget? portraitDesktopWidget,
+    Widget? landscapeDefaultWidget,
+    Widget? landscapePhoneWidget,
+    Widget? landscapeTabletWidget,
+    Widget? landscapeDesktopWidget,
   }) {
     final screenType = detectScreen(mediaQueryData: mediaQueryData);
 
     switch (screenType) {
       case ScreenType.unknownScreen:
         {
-          return defaultScreen;
+          return defaultWidget;
         }
       case ScreenType.portraitPhoneScreen:
         {
-          return portraitPhoneScreen ?? defaultScreen;
+          return portraitPhoneWidget ?? portraitDefaultWidget ?? defaultWidget;
         }
       case ScreenType.portraitTabletScreen:
         {
-          return portraitTabletScreen ?? defaultScreen;
+          return portraitTabletWidget ?? portraitDefaultWidget ?? defaultWidget;
         }
       case ScreenType.portraitDesktopScreen:
         {
-          return portraitDesktopScreen ?? defaultScreen;
+          return portraitDesktopWidget ??
+              portraitDefaultWidget ??
+              defaultWidget;
         }
       case ScreenType.landscapeDesktopScreen:
         {
-          return landscapeDesktopScreen ?? defaultScreen;
+          return landscapeDesktopWidget ??
+              landscapeDefaultWidget ??
+              defaultWidget;
         }
       case ScreenType.landscapeTabletScreen:
         {
-          return landscapeTabletScreen ?? defaultScreen;
+          return landscapeTabletWidget ??
+              landscapeDefaultWidget ??
+              defaultWidget;
         }
       case ScreenType.landscapePhoneScreen:
         {
-          return landscapePhoneScreen ?? defaultScreen;
+          return landscapePhoneWidget ??
+              landscapeDefaultWidget ??
+              defaultWidget;
         }
     }
   }
 
-  double scaleFactorSelector({
+  Object valueSelectorByScreenSize({
     required MediaQueryData mediaQueryData,
-    required double defaultScaleFactor,
-    double? portraitPhoneScaleFactor,
-    double? portraitTabletScaleFactor,
-    double? portraitDesktopScaleFactor,
-    double? landscapePhoneScaleFactor,
-    double? landscapeTabletScaleFactor,
-    double? landscapeDesktopScaleFactor,
-
+    required Object defaultValue,
+    Object? portraitDefaultValue,
+    Object? portraitPhoneValue,
+    Object? portraitTabletValue,
+    Object? portraitDesktopValue,
+    Object? landscapeDefaultValue,
+    Object? landscapePhoneValue,
+    Object? landscapeTabletValue,
+    Object? landscapeDesktopValue,
   }) {
     final screenType = detectScreen(mediaQueryData: mediaQueryData);
 
     switch (screenType) {
       case ScreenType.unknownScreen:
         {
-          return defaultScaleFactor;
+          return defaultValue;
         }
       case ScreenType.portraitPhoneScreen:
         {
-          return portraitPhoneScaleFactor ?? defaultScaleFactor;
+          return portraitPhoneValue ?? portraitDefaultValue ?? defaultValue;
         }
       case ScreenType.portraitTabletScreen:
         {
-          return portraitTabletScaleFactor ?? defaultScaleFactor;
+          return portraitTabletValue ?? portraitDefaultValue ?? defaultValue;
         }
       case ScreenType.portraitDesktopScreen:
         {
-          return portraitDesktopScaleFactor ?? defaultScaleFactor;
+          return portraitDesktopValue ?? portraitDefaultValue ?? defaultValue;
         }
       case ScreenType.landscapeDesktopScreen:
         {
-          return landscapeDesktopScaleFactor ?? defaultScaleFactor;
+          return landscapeDesktopValue ?? landscapeDefaultValue ?? defaultValue;
         }
       case ScreenType.landscapeTabletScreen:
         {
-          return landscapeTabletScaleFactor ?? defaultScaleFactor;
+          return landscapeTabletValue ?? landscapeDefaultValue ?? defaultValue;
         }
       case ScreenType.landscapePhoneScreen:
         {
-          return landscapePhoneScaleFactor ?? defaultScaleFactor;
+          return landscapePhoneValue ?? landscapeDefaultValue ?? defaultValue;
         }
     }
   }
