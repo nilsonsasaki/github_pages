@@ -15,7 +15,7 @@ class GithubPage extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        MyHomePage.routeName: (context) => const MyHomePage(title: 'Homepage'),
+        MyHomePage.routeName: (context) => const MyHomePage(),
       },
     );
   }
