@@ -36,11 +36,11 @@ class VerticalSelfIntroduction extends StatelessWidget with ScreenDetector {
                 defaultValue: Theme.of(context)
                     .textTheme
                     .headline2
-                    ?.copyWith(color: Colors.white, height: 1.5) as Object,
+                    ?.copyWith(color: WebSiteColors.primaryColor600, height: 1.5) as Object,
                 portraitPhoneValue: Theme.of(context)
                     .textTheme
                     .headline4
-                    ?.copyWith(color: Colors.white, height: 1.5) as Object,
+                    ?.copyWith(color: WebSiteColors.primaryColor600, height: 1.5) as Object,
               ) as TextStyle,
               children: const [
                 TextSpan(
