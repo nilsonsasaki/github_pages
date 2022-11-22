@@ -15,19 +15,27 @@ class MyHomePage extends StatelessWidget with ScreenDetector {
     final ScrollController controller = ScrollController();
 
     return Scaffold(
-      body: ListView(
+      body: RawScrollbar(
         controller: controller,
-        children: [
-          selectWidgetByScreenSize(
-            mediaQueryData: mediaQueryData,
-            defaultWidget: HorizontalSelfIntroduction(
+        thumbVisibility: true,
+        trackVisibility: true,
+        thickness: 16,
+        thumbColor: Colors.grey,
+        radius: const Radius.circular(20),
+        child: ListView(
+          controller: controller,
+          children: [
+            selectWidgetByScreenSize(
               mediaQueryData: mediaQueryData,
+              defaultWidget: HorizontalSelfIntroduction(
+                mediaQueryData: mediaQueryData,
+              ),
+              portraitDefaultWidget: VerticalSelfIntroduction(
+                mediaQueryData: mediaQueryData,
+              ),
             ),
-            portraitDefaultWidget: VerticalSelfIntroduction(
-              mediaQueryData: mediaQueryData,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

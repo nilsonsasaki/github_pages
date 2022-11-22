@@ -15,24 +15,32 @@ class PvSizingApp extends StatelessWidget with ScreenDetector {
     final ScrollController controller = ScrollController();
 
     return Scaffold(
-      body: ListView(
+      body: RawScrollbar(
         controller: controller,
-        children: [
-          selectWidgetByScreenSize(
-            mediaQueryData: mediaQueryData,
-            defaultWidget: HorizontalBanner(
+        thumbVisibility: true,
+        trackVisibility: true,
+        thickness: 16,
+        thumbColor: Colors.grey,
+        radius: const Radius.circular(20),
+        child: ListView(
+          controller: controller,
+          children: [
+            selectWidgetByScreenSize(
               mediaQueryData: mediaQueryData,
+              defaultWidget: HorizontalBanner(
+                mediaQueryData: mediaQueryData,
+              ),
+              portraitDefaultWidget: VerticalBanner(
+                mediaQueryData: mediaQueryData,
+              ),
             ),
-            portraitDefaultWidget: VerticalBanner(
-              mediaQueryData: mediaQueryData,
+            Center(
+              child: PtPrivacyPolicy(
+                mediaQueryData: mediaQueryData,
+              ),
             ),
-          ),
-          Center(
-            child: PtPrivacyPolicy(
-              mediaQueryData: mediaQueryData,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
