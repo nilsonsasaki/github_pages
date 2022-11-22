@@ -31,7 +31,7 @@ class HorizontalBanner extends StatelessWidget with ScreenDetector {
         children: [
           CircleAvatar(
             backgroundColor: const Color.fromRGBO(0, 0, 0, 0),
-            radius: screenHeight <= 840 ? screenHeight * 0.25 : 840 / 4,
+            radius: screenHeight <= 840 ? screenHeight * 0.20 : 840 / 4,
             backgroundImage: const AssetImage('assets/logo_curso_solar.png'),
           ),
           Center(
@@ -50,7 +50,7 @@ class HorizontalBanner extends StatelessWidget with ScreenDetector {
                     mediaQueryData: mediaQueryData,
                     defaultValue: Theme.of(context)
                         .textTheme
-                        .headline1
+                        .headline2
                         ?.copyWith(
                             color: WebSiteColors.primaryColorLight,
                             fontWeight: FontWeight.bold,
