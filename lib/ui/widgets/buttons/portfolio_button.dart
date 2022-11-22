@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:github_pages/ui/constants/colors.dart';
 import 'package:github_pages/ui/mixins/screen_detector.dart';
+import 'package:github_pages/ui/screens/pv_sizing_app.dart';
 
 class PortfolioButton extends StatelessWidget with ScreenDetector {
   const PortfolioButton(
@@ -24,7 +25,9 @@ class PortfolioButton extends StatelessWidget with ScreenDetector {
           landscapePhoneValue: Theme.of(context).textTheme.button as Object,
         ) as TextStyle,
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).pushNamed(PvSizingApp.routeName);
+      },
       child: Text(
         'My projects',
         textScaleFactor: textScaleFactor,
