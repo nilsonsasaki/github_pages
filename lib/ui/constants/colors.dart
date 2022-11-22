@@ -12,4 +12,7 @@ class WebSiteColors {
   static const primaryColor800 = Color(0xFF00324A);
   static const primaryColor900 = Color(0xFF001925);
 
+  static const primaryColorLight = Color(0xFF57ACEC);
+  static const primaryColorDark = Color(0xFF005189);
+
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:github_pages/ui/screens/my_home_page.dart';
+import 'package:github_pages/ui/screens/pv_sizing_app.dart';
 
 class GithubPage extends StatelessWidget {
   const GithubPage({super.key});
@@ -16,6 +17,7 @@ class GithubPage extends StatelessWidget {
       ),
       routes: {
         MyHomePage.routeName: (context) => const MyHomePage(),
+        PvSizingApp.routeName: (context) => const PvSizingApp(),
       },
     );
   }
