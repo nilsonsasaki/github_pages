@@ -23,4 +23,6 @@ class Strings {
   static const ptContactUsContent = 'Caso tenha dúvidas ou sugestões sobre qualquer assunto relacionado a esta Política de Privacidade, entre em contato conosco através do e-mail nilsonsasaki@gmail.com.';
   static const ptUpdate = 'Atualização';
   static const ptUpdateContent = 'Nos reservamos o direito de revisar e modificar a Política de Privacidade a qualquer momento. A versão mais atualizada da nossa política de privacidade pode ser encontrada em nosso website https://nilsonsasaki.github.io/#/curso-solar-usp . Recomendamos que você visite regularmente esta página para se manter atualizado.';
+  static const ptAttention = 'Atenção';
+  static const ptAttentionContent = 'Não nos responsabilizamos pela precisão ou confiabilidade de qualquer informação ou recomendação transmitida pelo Aplicativo. Não nos responsabilizamos pelo uso dos resultados obtidos através do aplicativo';
 }

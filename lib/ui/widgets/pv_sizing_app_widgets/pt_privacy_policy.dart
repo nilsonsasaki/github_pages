@@ -153,6 +153,19 @@ class PtPrivacyPolicy extends StatelessWidget {
             textScaleFactor: textScaleFactor,
             style: Theme.of(context).textTheme.bodyLarge,
           ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: screenHeight * 0.03),
+            child: Text(
+              Strings.ptAttention,
+              textScaleFactor: textScaleFactor,
+              style: Theme.of(context).textTheme.headline5,
+            ),
+          ),
+          Text(
+            Strings.ptAttentionContent,
+            textScaleFactor: textScaleFactor,
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
         ],
       ),
     );
